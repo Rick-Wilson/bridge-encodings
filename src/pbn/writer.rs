@@ -116,7 +116,9 @@ mod tests {
         assert!(pbn.contains("[Board \"1\"]"));
         assert!(pbn.contains("[Dealer \"N\"]"));
         assert!(pbn.contains("[Vulnerable \"None\"]"));
-        assert!(pbn.contains("[Deal \"N:K843.T542.J6.863 AQJ7.K.Q75.AT942 962.AJ7.KT82.J75 T5.Q9863.A943.KQ\"]"));
+        assert!(pbn.contains(
+            "[Deal \"N:K843.T542.J6.863 AQJ7.K.Q75.AT942 962.AJ7.KT82.J75 T5.Q9863.A943.KQ\"]"
+        ));
     }
 
     #[test]

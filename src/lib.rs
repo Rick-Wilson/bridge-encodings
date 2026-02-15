@@ -25,8 +25,11 @@ mod error;
 pub mod lin;
 pub mod oneline;
 pub mod pbn;
+pub mod printall;
+mod reader;
 
 pub use error::{ParseError, Result};
+pub use reader::DealReader;
 
 // Re-export bridge-types for convenience
 pub use bridge_types::{

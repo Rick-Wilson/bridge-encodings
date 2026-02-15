@@ -64,12 +64,7 @@ impl LinData {
 
 /// Parse a LIN string into LinData
 pub fn parse_lin(lin_str: &str) -> Result<LinData> {
-    let mut player_names = [
-        String::new(),
-        String::new(),
-        String::new(),
-        String::new(),
-    ];
+    let mut player_names = [String::new(), String::new(), String::new(), String::new()];
     let mut dealer = Direction::North;
     let mut deal = Deal::new();
     let mut vulnerability = Vulnerability::None;
@@ -199,7 +194,12 @@ fn parse_md(md_str: &str) -> Option<(Direction, Deal)> {
     }
 
     let mut deal = Deal::new();
-    let directions = [Direction::South, Direction::West, Direction::North, Direction::East];
+    let directions = [
+        Direction::South,
+        Direction::West,
+        Direction::North,
+        Direction::East,
+    ];
 
     for (i, hand_str) in hand_strs.iter().enumerate().take(3) {
         if let Some(hand) = parse_lin_hand(hand_str) {
@@ -375,7 +375,10 @@ mod tests {
 
         assert_eq!(data.auction.len(), 3);
         assert!(data.auction[0].alert);
-        assert_eq!(data.auction[0].annotation, Some("could be short".to_string()));
+        assert_eq!(
+            data.auction[0].annotation,
+            Some("could be short".to_string())
+        );
         assert!(!data.auction[1].alert);
         assert!(data.auction[2].alert);
         assert_eq!(data.auction[2].annotation, Some("5 hearts".to_string()));

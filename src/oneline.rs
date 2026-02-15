@@ -44,7 +44,12 @@ pub fn parse_oneline(input: &str) -> Result<Deal> {
 pub fn format_oneline(deal: &Deal) -> String {
     let mut result = String::new();
 
-    for &dir in &[Direction::North, Direction::East, Direction::South, Direction::West] {
+    for &dir in &[
+        Direction::North,
+        Direction::East,
+        Direction::South,
+        Direction::West,
+    ] {
         if !result.is_empty() {
             result.push(' ');
         }
